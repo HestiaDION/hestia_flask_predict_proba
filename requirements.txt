@@ -1,0 +1,11 @@
+Flask
+Flasgger
+pandas
+joblib
+numpy
+matplotlib
+seaborn
+plotly
+scikit-learn
+imbalanced-learn
+openpyxl
