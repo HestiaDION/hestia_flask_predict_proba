@@ -76,12 +76,13 @@ Recebe um JSON com os dados do usuário e retorna a probabilidade de um resultad
     -   `Tipo de Instituição` (string): Tipo de instituição (ex.: "Pública", "Privada").
     
     -   `Idade` (int): Idade do usuário.
-    -   `Renda Mensal` (string): Renda mensal do usuário (ex.: "Não possuo renda", "3500").
+    -   `Renda Mensal` (string): Renda mensal do usuário (ex.: "Não possuo renda", "R$12.001 +", "Até R$2.000",
+"R$2.001 - R$5.000", "R$5.001 - R$8.000", "R$8.001 - R$12.000").
     -   `Possui DNE` (string): Se o usuário possui DNE (ex.: "Sim", "Não").
     -   `Mudança de Residência` (string): Se o usuário já mudou de residência (ex.: "Sim", "Não").
     -   `Faculdade Possui Alojamento` (string): Se a faculdade oferece alojamento (ex.: "Sim", "Não").
-    -   `Frequência de Uso de Apps de Moradia` (string): Frequência de uso de aplicativos de moradia (ex.: "Diário", "Semanal").
-    -   `Confiança em Avaliações de Outros Usuários` (string): Grau de confiança em avaliações de outros usuários (ex.: "Alta", "Baixa").
+    -   `Frequência de Uso de Apps de Moradia` (string): Frequência de uso de aplicativos de moradia (ex.: "Baixa", "Média", "Alta").
+    -   `Confiança em Avaliações de Outros Usuários` (string): Grau de confiança em avaliações de outros usuários (ex.: "Baixa", "Média", "Alta").
 -   **Exemplo de JSON de entrada**:
     ```
     
