@@ -28,37 +28,37 @@ def predict_user():
         schema:
           type: object
           required:
-            - Tipo de Instituição
-            - Idade
-            - Renda Mensal
-            - Possui DNE
-            - Mudança de Residência
-            - Faculdade Possui Alojamento
-            - Frequência de Uso de Apps de Moradia
-            - Confiança em Avaliações de Outros Usuários
+            - tipo_de_instituicao
+            - idade
+            - renda_mensal
+            - possui_dne
+            - mudanca_de_residencia
+            - faculdade_possui_alojamento
+            - frequencia_de_uso_de_apps_de_moradia
+            - confianca_em_avaliacoes_de_outros_usuarios
           properties:
-            Tipo de Instituição:
+            tipo_de_instituicao:
               type: string
               description: Tipo de instituição de ensino
-            Idade:
+            idade:
               type: integer
               description: Idade do usuário
-            Renda Mensal:
+            renda_mensal:
               type: string
               description: Renda mensal do usuário
-            Possui DNE:
+            possui_dne:
               type: string
               description: Indicação se o usuário possui DNE
-            Mudança de Residência:
+            mudanca_de_residencia:
               type: string
               description: Se o usuário já mudou de residência
-            Faculdade Possui Alojamento:
+            faculdade_possui_alojamento:
               type: string
               description: Se a faculdade possui alojamento
-            Frequência de Uso de Apps de Moradia:
+            frequencia_de_uso_de_apps_de_moradia:
               type: string
               description: Frequência de uso de apps de moradia
-            Confiança em Avaliações de Outros Usuários:
+            confianca_em_avaliacoes_de_outros_usuarios:
               type: string
               description: Grau de confiança em avaliações de outros usuários
     responses:
@@ -81,14 +81,14 @@ def predict_user():
 
         # Validação básica para garantir que todos os campos estão presentes
         required_fields = [
-            "Tipo de Instituição",
-            "Idade",
-            "Renda Mensal",
-            "Possui DNE",
-            "Mudança de Residência",
-            "Faculdade Possui Alojamento",
-            "Frequência de Uso de Apps de Moradia",
-            "Confiança em Avaliações de Outros Usuários"
+            "tipo_de_instituicao",
+            "idade",
+            "renda_mensal",
+            "possui_dne",
+            "mudanca_de_residencia",
+            "faculdade_possui_alojamento",
+            "frequencia_de_uso_de_apps_de_moradia",
+            "confianca_em_avaliacoes_de_outros_usuarios"
         ]
 
         for field in required_fields:
