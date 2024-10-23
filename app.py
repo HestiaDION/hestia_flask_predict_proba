@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 import pandas as pd
 import joblib
@@ -132,4 +133,6 @@ def predict_user():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Defina o host para '0.0.0.0' e a porta a partir da variável de ambiente
+    port = int(os.environ.get('PORT', 5000))  # A Render define a porta na variável 'PORT'
+    app.run(host='0.0.0.0', port=port, debug=True)
