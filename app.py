@@ -13,6 +13,18 @@ swagger = Swagger(app)
 # Configuração básica do logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+# Mapeamento de snake_case para nomes de colunas padrão da IA
+column_mapping = {
+    "tipo_de_instituicao": "Tipo de Instituição",
+    "idade": "Idade",
+    "renda_mensal": "Renda Mensal",
+    "possui_dne": "Possui DNE",
+    "mudanca_de_residencia": "Mudança de Residência",
+    "faculdade_possui_alojamento": "Faculdade Possui Alojamento",
+    "frequencia_de_uso_de_apps_de_moradia": "Frequência de Uso de Apps de Moradia",
+    "confianca_em_avaliacoes_de_outros_usuarios": "Confiança em Avaliações de Outros Usuários"
+}
+
 @app.route('/predict_user', methods=['POST'])
 def predict_user():
     """
@@ -96,10 +108,14 @@ def predict_user():
                 logging.warning(f"Campo '{field}' não está presente no JSON")
                 return jsonify({"error": f"Campo '{field}' não está presente no JSON"}), 400
 
-        # Criar DataFrame a partir do dicionário recebido
-        df = pd.DataFrame([data])
+        # Converter de snake_case para os nomes esperados pela IA
+        mapped_data = {column_mapping[key]: value for key, value in data.items()}
+
+        # Criar DataFrame com os nomes padrão das colunas
+        df = pd.DataFrame([mapped_data])
 
         logging.info(f"Requisição recebida com os seguintes dados: {data}")
+        logging.info(f"Dados mapeados para IA: {mapped_data}")
 
         # Carregar o modelo
         try:
